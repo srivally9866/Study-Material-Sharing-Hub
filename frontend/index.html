@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student-friendly hub to discover and share college study materials.">
+  <title>StudyShare — Study Material Sharing Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="StudyShare home"><span class="brand-mark">S</span><span>study<span class="brand-accent">share</span></span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#materials">Explore</a><a href="#how-it-works">How it works</a><a href="#share">Share notes</a>
+      </div>
+      <a class="nav-cta" href="#share">＋ Upload material</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> BETTER TOGETHER, ONE NOTE AT A TIME</div>
+          <h1>Good notes.<br><span>Great minds.</span><br>Better results.</h1>
+          <p class="hero-description">Your campus knowledge, all in one place. Find useful notes, question papers, and learning resources shared by students like you.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#materials">Explore materials <span>↗</span></a><a class="button button-quiet" href="#how-it-works">See how it works <span>↓</span></a></div>
+          <div class="social-proof"><div class="avatar-stack"><span>A</span><span>R</span><span>K</span><span>+</span></div><div><strong>Built for student success</strong><small>Learn together. Grow together.</small></div></div>
+        </div>
+        <div class="hero-art" aria-label="Study material preview">
+          <div class="floating-chip chip-top">✦ Shared knowledge</div>
+          <div class="study-card">
+            <div class="study-card-top"><div class="file-icon purple">▤</div><span class="pill">POPULAR</span></div>
+            <p class="card-kicker">ENGINEERING · SEM 1</p><h3>Programming in Python</h3><p class="muted">Unit notes & practice problems</p>
+            <div class="card-meta"><span>◷ 12 pages</span><span>♡ Community pick</span></div>
+            <div class="progress-line"><span></span></div>
+            <div class="card-footer"><div class="mini-avatar">S</div><span>Shared by a student</span><span class="arrow-circle">↗</span></div>
+          </div>
+          <div class="floating-note note-left"><span class="note-icon">✎</span><span><strong>Notes that click</strong><small>Made by students</small></span></div>
+          <div class="floating-note note-right"><span class="note-icon green">✓</span><span><strong>Study smarter</strong><small>One topic at a time</small></span></div>
+          <div class="art-decoration decoration-one"></div><div class="art-decoration decoration-two"></div>
+        </div>
+      </div>
+      <div class="container hero-bottom"><span>YOUR STUDY TOOLKIT</span><div><span>✦ Class notes</span><span>✦ Previous papers</span><span>✦ Lab manuals</span><span>✦ Quick references</span></div></div>
+    </section>
+
+    <section class="section materials-section" id="materials">
+      <div class="container">
+        <div class="section-heading heading-row"><div><div class="eyebrow">THE RESOURCE LIBRARY</div><h2>Find your next <span>aha! moment.</span></h2><p>Search the library and discover resources for your next study session.</p></div><span class="library-badge"><span class="live-dot"></span> Community library</span></div>
+        <div class="search-panel">
+          <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Search by title, subject, or keyword..." aria-label="Search materials"><kbd>⌘ K</kbd></label>
+          <label class="filter-label"><span>Subject</span><select id="subjectFilter"><option value="">All subjects</option></select></label>
+          <label class="filter-label"><span>Resource type</span><select id="typeFilter"><option value="">All types</option><option>Notes</option><option>Question Paper</option><option>Lab Manual</option><option>Reference</option><option>Presentation</option><option>Other</option></select></label>
+          <button class="button button-dark" id="searchButton">Search <span>→</span></button>
+        </div>
+        <div class="results-row"><p id="resultsCount">Loading resources…</p><button class="text-button" id="clearFilters">Clear filters ↗</button></div>
+        <div class="materials-grid" id="materialsGrid" aria-live="polite"><div class="loading-state"><span class="spinner"></span><p>Loading study materials…</p></div></div>
+        <div class="empty-state hidden" id="emptyState"><div class="empty-icon">⌕</div><h3>No materials found just yet</h3><p>Try a different search or be the first to share a resource for this topic.</p><a class="button button-primary" href="#share">Share a material</a></div>
+        <p class="api-note" id="apiNote"></p>
+      </div>
+    </section>
+
+    <section class="section how-section" id="how-it-works">
+      <div class="container">
+        <div class="section-heading centered"><div class="eyebrow">SIMPLE BY DESIGN</div><h2>Learning is better <span>when shared.</span></h2><p>Three small steps to make your next study session count.</p></div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-number">01</div><div class="step-illustration lavender">⌕</div><h3>Discover</h3><p>Search by subject, semester, or resource type to find what you need.</p></article>
+          <article class="step-card"><div class="step-number">02</div><div class="step-illustration peach">↥</div><h3>Share</h3><p>Upload a link to your notes or useful learning resource for classmates.</p></article>
+          <article class="step-card"><div class="step-number">03</div><div class="step-illustration mint">✦</div><h3>Study smarter</h3><p>Use shared resources to revise, practise, and help your community grow.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="share-section" id="share">
+      <div class="container share-grid">
+        <div class="share-copy"><div class="eyebrow light-eyebrow">PASS IT FORWARD</div><h2>Have notes worth<br>sharing?</h2><p>Help another student understand a tricky topic. Add your resource to the community library in a few simple steps.</p><div class="share-points"><span>✓ Easy to submit</span><span>✓ Useful for your classmates</span><span>✓ Knowledge grows when shared</span></div></div>
+        <form class="share-form" id="materialForm">
+          <div class="form-header"><div><h3>Share a resource</h3><p>Fields marked * are required.</p></div><span class="form-icon">↗</span></div>
+          <div class="form-grid">
+            <label class="form-field full"><span>Resource title *</span><input name="title" id="titleInput" required minlength="3" maxlength="140" placeholder="e.g. Python Unit 1 — Complete Notes"></label>
+            <label class="form-field"><span>Subject *</span><input name="subject" id="subjectInput" required maxlength="80" placeholder="e.g. Python Programming"></label>
+            <label class="form-field"><span>Resource type *</span><select name="resource_type" id="resourceTypeInput" required><option value="">Choose type</option><option>Notes</option><option>Question Paper</option><option>Lab Manual</option><option>Reference</option><option>Presentation</option><option>Other</option></select></label>
+            <label class="form-field"><span>Semester / year</span><input name="semester" id="semesterInput" maxlength="40" placeholder="e.g. Semester 1"></label>
+            <label class="form-field"><span>Your name *</span><input name="author_name" id="authorInput" required maxlength="80" placeholder="e.g. A student"></label>
+            <label class="form-field full"><span>Resource link *</span><input name="resource_url" id="urlInput" type="url" required maxlength="2048" placeholder="https://drive.google.com/..."><small>Use a link you have permission to share. Set your file's access so classmates can open it.</small></label>
+            <label class="form-field full"><span>Short description</span><textarea name="description" id="descriptionInput" rows="3" maxlength="600" placeholder="What will students learn from this resource?"></textarea></label>
+          </div>
+          <div class="form-actions"><p id="formMessage" class="form-message" role="status"></p><button class="button button-primary" id="submitButton" type="submit">Share resource <span>↗</span></button></div>
+          <p class="privacy-note">Please share only materials you have the right to distribute. No private or sensitive information.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="bottom-cta"><div class="container bottom-cta-inner"><div><div class="eyebrow">YOUR NEXT STUDY SESSION STARTS HERE</div><h2>Small notes. Big progress.</h2></div><a class="button button-primary" href="#materials">Explore the library <span>↗</span></a></div></section>
+  </main>
+  <footer class="footer"><div class="container footer-inner"><a class="brand" href="#home"><span class="brand-mark">S</span><span>study<span class="brand-accent">share</span></span></a><p>Made for students, powered by sharing.</p><span>© <span id="year"></span> StudyShare</span></div></footer>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
